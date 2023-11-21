@@ -1,14 +1,14 @@
 import Menuitems from "./Menuitems";
-import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 import { AiFillCaretRight } from "react-icons/ai";
+import Link from "next/link";
 import DarkModeSwitch from "./DarkModeSwitch";
 export default function Header() {
   return (
     <div className="flex justify-between mx-2 max-w-8xl sm:max-auto items-center py-6">
         <div className="flex">
             <Menuitems title="home" address="/" Icon={ FaHome }  />
-            <Menuitems title="About" address="/" Icon={ AiFillCaretRight }  />
+            <Menuitems title="About" address="/about" Icon={ AiFillCaretRight }  />
         </div>
         <div className="flex items-center space-x-5">
           <DarkModeSwitch/>
@@ -20,5 +20,5 @@ export default function Header() {
           </Link>
         </div>
     </div>
-  )
+  );
 }
