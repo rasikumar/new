@@ -1,0 +1,2 @@
+gti
+git init

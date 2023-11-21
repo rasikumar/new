@@ -1,0 +1,144 @@
+{
+	"name": "snipped",
+	"displayName": "Snipped",
+	"publisher": "jeffersonlicet",
+	"description": "Create fancy screenshots of your code without leaving the editor",
+	"author": {
+		"name": "Jefferson Licet"
+	},
+	"icon": "resources/icon.png",
+	"version": "1.3.0",
+	"engines": {
+		"vscode": "^1.57.0"
+	},
+	"keywords": [
+		"screenshot",
+		"snippet",
+		"snipped",
+		"polacode",
+		"code",
+		"tweet",
+		"share"
+	],
+	"bugs": {
+		"url": "https://github.com/jeffersonlicet/snipped/issues",
+		"email": "jeffersonlicet@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jeffersonlicet/snipped.git"
+	},
+	"homepage": "https://github.com/jeffersonlicet/snipped",
+	"categories": [
+		"Other",
+		"Snippets",
+		"Visualization"
+	],
+	"activationEvents": [
+		"onCommand:snipped.start"
+	],
+	"galleryBanner": {
+		"color": "#5d5d5d",
+		"theme": "dark"
+	},
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "snipped.start",
+				"title": "Snipped > Take code screenshot",
+				"icon": "resources/alternate.png"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "snipped.start"
+				}
+			],
+			"touchBar": [
+				{
+					"command": "snipped.start",
+					"group": "editing"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "Snipped",
+			"properties": {
+				"snipped.enableLogo": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": true,
+					"description": "Enable Snipped Logo"
+				},
+				"snipped.disableTitle": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": false,
+					"description": "Disable file title"
+				},
+				"snipped.scale": {
+					"scope": "resource",
+					"type": "number",
+					"default": 1,
+					"description": "File scale (1-3), larger means more quality"
+				},
+				"snipped.autoCopy": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": true,
+					"description": "Auto Copy Screenshots"
+				},
+				"snipped.enablePng": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": false,
+					"description": "Save screenshots as PNG"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"test-compile": "tsc -p ./",
+		"test-watch": "tsc -watch -p ./",
+		"pretest": "npm run test-compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "14.x",
+		"@types/puppeteer": "^5.4.3",
+		"@types/vscode": "^1.57.0",
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.26.0",
+		"eslint": "^7.27.0",
+		"glob": "^7.1.7",
+		"mocha": "^10.0.0",
+		"ts-loader": "^9.2.2",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2",
+		"webpack": "^5.38.1",
+		"webpack-cli": "^4.7.0"
+	},
+	"dependencies": {
+		"dom-to-image-more": "^2.12.0"
+	},
+	"__metadata": {
+		"id": "585e6601-b5fc-4f0c-b201-68822be3579b",
+		"publisherId": "1d3a01a9-9cd7-4bfe-a84a-ec6eada89dbc",
+		"publisherDisplayName": "Jefferson Licet",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1695367833797,
+		"preRelease": false
+	}
+}
